@@ -1,0 +1,3 @@
+[submodule "External/SVProgressHUD"]
+	path = External/SVProgressHUD
+	url = https://github.com/TransitApp/SVProgressHUD.git
