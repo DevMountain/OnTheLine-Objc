@@ -57,6 +57,14 @@
     completion();
 }
 
+- (NSString *)documentsPathWithFileName:(NSString *)filename {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    return [documentsPath stringByAppendingPathComponent:filename];
+}
+
 - (void)setPhotoURLs:(NSArray *)photoURLs {
     [[NSUserDefaults standardUserDefaults] setObject:photoURLs forKey:@"photoURLs"];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -67,12 +75,5 @@
     return photoURLs;
 }
 
-- (NSString *)documentsPathWithFileName:(NSString *)filename {
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    NSString *documentsPath = [paths objectAtIndex:0];
-    
-    return [documentsPath stringByAppendingPathComponent:filename];
-}
 
 @end

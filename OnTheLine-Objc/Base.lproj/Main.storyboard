@@ -28,12 +28,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Message Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0v-CP-e9S">
-                                                        <rect key="frame" x="10" y="8" width="486" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-A7-DFy">
                                                         <rect key="frame" x="552" y="10" width="40" height="40"/>
                                                         <constraints>
@@ -54,37 +48,13 @@
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iel-gM-7Uc">
-                                                        <rect key="frame" x="10" y="34" width="486" height="14.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <color key="textColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="iel-gM-7Uc" secondAttribute="bottom" constant="8" id="0lY-cB-Ybg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iel-gM-7Uc" secondAttribute="trailing" constant="26" id="1yn-fA-rup"/>
-                                                    <constraint firstItem="iel-gM-7Uc" firstAttribute="leading" secondItem="e7D-vE-vQi" secondAttribute="leading" constant="10" id="35G-SJ-nO9"/>
-                                                    <constraint firstItem="38T-pi-VI4" firstAttribute="leading" secondItem="G0v-CP-e9S" secondAttribute="trailing" constant="8" id="3Mf-vE-2Ig"/>
-                                                    <constraint firstItem="G0v-CP-e9S" firstAttribute="top" secondItem="e7D-vE-vQi" secondAttribute="top" constant="8" id="DcP-Na-THr"/>
-                                                    <constraint firstItem="iel-gM-7Uc" firstAttribute="top" secondItem="e7D-vE-vQi" secondAttribute="top" constant="8" id="G08-e4-g4r"/>
-                                                    <constraint firstItem="iel-gM-7Uc" firstAttribute="top" secondItem="G0v-CP-e9S" secondAttribute="bottom" constant="5" id="KgC-54-7Ad"/>
                                                     <constraint firstAttribute="centerY" secondItem="38T-pi-VI4" secondAttribute="centerY" id="L8e-3v-r3m"/>
                                                     <constraint firstAttribute="trailing" secondItem="Yj2-A7-DFy" secondAttribute="trailing" constant="8" id="Twv-tN-pX9"/>
-                                                    <constraint firstAttribute="centerY" secondItem="iel-gM-7Uc" secondAttribute="centerY" id="cbn-I0-vjh"/>
-                                                    <constraint firstItem="G0v-CP-e9S" firstAttribute="leading" secondItem="e7D-vE-vQi" secondAttribute="leading" constant="10" id="dO2-kS-kdk"/>
-                                                    <constraint firstItem="38T-pi-VI4" firstAttribute="leading" secondItem="iel-gM-7Uc" secondAttribute="trailing" constant="8" id="xXm-Dq-C7g"/>
                                                     <constraint firstItem="Yj2-A7-DFy" firstAttribute="top" secondItem="e7D-vE-vQi" secondAttribute="top" constant="10" id="yeX-NN-pey"/>
                                                     <constraint firstItem="Yj2-A7-DFy" firstAttribute="leading" secondItem="38T-pi-VI4" secondAttribute="trailing" constant="8" id="zgW-qA-fk8"/>
                                                 </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="0lY-cB-Ybg"/>
-                                                        <exclude reference="1yn-fA-rup"/>
-                                                        <exclude reference="G08-e4-g4r"/>
-                                                        <exclude reference="cbn-I0-vjh"/>
-                                                    </mask>
-                                                </variation>
                                             </view>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="E0A-yq-UlB"/>
@@ -103,8 +73,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="creationDate" destination="iel-gM-7Uc" id="bhn-Og-Yil"/>
-                                    <outlet property="firstMessage" destination="G0v-CP-e9S" id="3vL-PI-jd3"/>
                                     <outlet property="photoImageView" destination="DoE-JJ-cvH" id="nAF-hl-XiG"/>
                                     <segue destination="z9U-DJ-myh" kind="show" id="Xui-rV-wAS"/>
                                 </connections>

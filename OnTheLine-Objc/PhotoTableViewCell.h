@@ -11,10 +11,7 @@
 @interface PhotoTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UIImageView *photoImageView;
-@property (nonatomic, strong) IBOutlet UILabel *creationDate;
-@property (nonatomic, strong) IBOutlet UILabel *firstMessage;
 
-- (void)updateWithPhotoId:(NSString *)photoId;
 - (void)updateWithPhotoFileName:(NSString *)photoFileName;
 
 @end

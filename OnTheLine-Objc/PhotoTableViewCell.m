@@ -7,13 +7,8 @@
 //
 
 #import "PhotoTableViewCell.h"
-#import "PhotosController.h"
-#import "CloudManager.h"
 
 @interface PhotoTableViewCell ()
-
-@property (nonatomic, strong) NSString *photoId;
-@property (nonatomic, strong) CKRecord *photo;
 
 @end
 
@@ -21,32 +16,6 @@
 
 - (void)prepareForReuse {
     self.photoImageView.image = nil;
-}
-
-- (void)updateWithPhotoId:(NSString *)photoId {
-    self.photoId = photoId;
-    
-    [[PhotosController sharedInstance] downloadRecord:photoId completionHandler:^(CKRecord *record) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            CKAsset *asset = record[@"photo"];
-            UIImage *image = [UIImage imageWithContentsOfFile:asset.fileURL.path];
-            self.photoImageView.image = image;
-            
-            NSString *dateDiff = [self dateDiff:record[@"createdDate"]];
-            self.creationDate.text = dateDiff;
-            
-            NSArray *messages = record[@"comments"];
-            if (messages.count > 0) {
-                self.firstMessage.text = messages[0];
-            }
-                        
-            [self setNeedsLayout];
-            
-        });
-        
-    }];
 }
 
 - (void)updateWithPhotoFileName:(NSString *)photoFileName {
@@ -58,12 +27,6 @@
     UIImage *image = [UIImage imageWithData:photoData];
     
     self.photoImageView.image = image;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 -(NSString *)dateDiff:(NSDate *)origDate {
