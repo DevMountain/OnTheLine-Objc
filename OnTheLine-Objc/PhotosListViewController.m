@@ -9,8 +9,6 @@
 #import "PhotosListViewController.h"
 #import "PhotoTableViewCell.h"
 
-#import "SVProgressHUD.h"
-
 @interface PhotosListViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) bool alreadyLaunched;
