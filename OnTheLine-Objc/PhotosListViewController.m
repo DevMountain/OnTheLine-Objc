@@ -8,7 +8,6 @@
 
 #import "PhotosListViewController.h"
 #import "PhotosController.h"
-#import "SimplePhotosController.h"
 #import "PhotoTableViewCell.h"
 #import "PhotoSectionHeaderView.h"
 
@@ -94,40 +93,6 @@
 + (CGFloat)photoCellHeight {
     return 210;
 }
-
-#pragma mark - Simple PhotoController
-
-//- (IBAction)refresh:(id)sender {
-//    [self.tableView reloadData];
-//    [sender endRefreshing];
-//    
-//}
-//
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-//    
-//    // retrieve the image and resize it down
-//    UIImage *image = info[UIImagePickerControllerOriginalImage];
-//    
-//    [[SimplePhotosController sharedInstance] savePhoto:image completion:^{
-//        [SVProgressHUD showSuccessWithStatus:@"Posted"];
-//        [self refresh:nil];
-//    }];
-//    
-//    [self dismissViewControllerAnimated:YES completion:nil]
-//    ;
-//    
-//}
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    // Return the number of sections.
-//    return [SimplePhotosController sharedInstance].photoURLs.count;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    PhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
-//    [cell updateWithPhotoFileName:[SimplePhotosController sharedInstance].photoURLs[indexPath.section]];
-//    return cell;
-//}
 
 #pragma mark - CloudKit PhotosController
 

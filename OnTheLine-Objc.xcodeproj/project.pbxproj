@@ -23,7 +23,6 @@
 		4FCC9F771A7A15A200AEED5F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4FCC9F731A7A15A200AEED5F /* SVProgressHUD.bundle */; };
 		4FCC9F781A7A15A200AEED5F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F751A7A15A200AEED5F /* SVProgressHUD.m */; };
 		4FCC9F831A7A504200AEED5F /* PhotoSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F821A7A504200AEED5F /* PhotoSectionHeaderView.m */; };
-		4FCC9F861A7A623800AEED5F /* SimplePhotosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F851A7A623800AEED5F /* SimplePhotosController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +67,6 @@
 		4FCC9F751A7A15A200AEED5F /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		4FCC9F811A7A504200AEED5F /* PhotoSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSectionHeaderView.h; sourceTree = "<group>"; };
 		4FCC9F821A7A504200AEED5F /* PhotoSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSectionHeaderView.m; sourceTree = "<group>"; };
-		4FCC9F841A7A623800AEED5F /* SimplePhotosController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePhotosController.h; sourceTree = "<group>"; };
-		4FCC9F851A7A623800AEED5F /* SimplePhotosController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePhotosController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +178,6 @@
 		4FCC9F7D1A7A23C700AEED5F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4FCC9F841A7A623800AEED5F /* SimplePhotosController.h */,
-				4FCC9F851A7A623800AEED5F /* SimplePhotosController.m */,
 				4FCC9F451A78C89200AEED5F /* PhotosController.h */,
 				4FCC9F461A78C89200AEED5F /* PhotosController.m */,
 			);
@@ -327,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCC9F681A79960700AEED5F /* DetailViewController.m in Sources */,
-				4FCC9F861A7A623800AEED5F /* SimplePhotosController.m in Sources */,
 				4FCC9F6B1A79A00400AEED5F /* CloudManager.m in Sources */,
 				4FBE2BC91A76ED22006D1DAC /* PhotosListViewController.m in Sources */,
 				4FCC9F761A7A15A200AEED5F /* SVIndefiniteAnimatedView.m in Sources */,
