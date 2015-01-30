@@ -19,9 +19,6 @@
 		4FCC9F681A79960700AEED5F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F671A79960700AEED5F /* DetailViewController.m */; };
 		4FCC9F6B1A79A00400AEED5F /* CloudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F6A1A79A00400AEED5F /* CloudManager.m */; };
 		4FCC9F6E1A79C9D700AEED5F /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F6D1A79C9D700AEED5F /* PhotoTableViewCell.m */; };
-		4FCC9F761A7A15A200AEED5F /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F711A7A15A200AEED5F /* SVIndefiniteAnimatedView.m */; };
-		4FCC9F771A7A15A200AEED5F /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4FCC9F731A7A15A200AEED5F /* SVProgressHUD.bundle */; };
-		4FCC9F781A7A15A200AEED5F /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F751A7A15A200AEED5F /* SVProgressHUD.m */; };
 		4FCC9F831A7A504200AEED5F /* PhotoSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC9F821A7A504200AEED5F /* PhotoSectionHeaderView.m */; };
 /* End PBXBuildFile section */
 
@@ -59,12 +56,6 @@
 		4FCC9F6A1A79A00400AEED5F /* CloudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudManager.m; sourceTree = "<group>"; };
 		4FCC9F6C1A79C9D700AEED5F /* PhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTableViewCell.h; sourceTree = "<group>"; };
 		4FCC9F6D1A79C9D700AEED5F /* PhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTableViewCell.m; sourceTree = "<group>"; };
-		4FCC9F701A7A15A200AEED5F /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		4FCC9F711A7A15A200AEED5F /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		4FCC9F721A7A15A200AEED5F /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		4FCC9F731A7A15A200AEED5F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		4FCC9F741A7A15A200AEED5F /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		4FCC9F751A7A15A200AEED5F /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		4FCC9F811A7A504200AEED5F /* PhotoSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSectionHeaderView.h; sourceTree = "<group>"; };
 		4FCC9F821A7A504200AEED5F /* PhotoSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSectionHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +112,6 @@
 				4FCC9F7E1A7A23E400AEED5F /* Custom Views */,
 				4FCC9F7D1A7A23C700AEED5F /* Model */,
 				4FCC9F7F1A7A23F400AEED5F /* Networking */,
-				4FCC9F791A7A15A700AEED5F /* External */,
 				4FBE2BA11A76ECBF006D1DAC /* Supporting Files */,
 			);
 			path = "OnTheLine-Objc";
@@ -151,28 +141,6 @@
 				4FBE2BBC1A76ECBF006D1DAC /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4FCC9F6F1A7A15A200AEED5F /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				4FCC9F701A7A15A200AEED5F /* SVIndefiniteAnimatedView.h */,
-				4FCC9F711A7A15A200AEED5F /* SVIndefiniteAnimatedView.m */,
-				4FCC9F721A7A15A200AEED5F /* SVProgressHUD-Prefix.pch */,
-				4FCC9F731A7A15A200AEED5F /* SVProgressHUD.bundle */,
-				4FCC9F741A7A15A200AEED5F /* SVProgressHUD.h */,
-				4FCC9F751A7A15A200AEED5F /* SVProgressHUD.m */,
-			);
-			name = SVProgressHUD;
-			path = External/SVProgressHUD/SVProgressHUD;
-			sourceTree = SOURCE_ROOT;
-		};
-		4FCC9F791A7A15A700AEED5F /* External */ = {
-			isa = PBXGroup;
-			children = (
-				4FCC9F6F1A7A15A200AEED5F /* SVProgressHUD */,
-			);
-			name = External;
 			sourceTree = "<group>";
 		};
 		4FCC9F7D1A7A23C700AEED5F /* Model */ = {
@@ -303,7 +271,6 @@
 				4FBE2BAD1A76ECBF006D1DAC /* Main.storyboard in Resources */,
 				4FBE2BB21A76ECBF006D1DAC /* LaunchScreen.xib in Resources */,
 				4FBE2BAF1A76ECBF006D1DAC /* Images.xcassets in Resources */,
-				4FCC9F771A7A15A200AEED5F /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,9 +291,7 @@
 				4FCC9F681A79960700AEED5F /* DetailViewController.m in Sources */,
 				4FCC9F6B1A79A00400AEED5F /* CloudManager.m in Sources */,
 				4FBE2BC91A76ED22006D1DAC /* PhotosListViewController.m in Sources */,
-				4FCC9F761A7A15A200AEED5F /* SVIndefiniteAnimatedView.m in Sources */,
 				4FCC9F6E1A79C9D700AEED5F /* PhotoTableViewCell.m in Sources */,
-				4FCC9F781A7A15A200AEED5F /* SVProgressHUD.m in Sources */,
 				4FBE2BA71A76ECBF006D1DAC /* AppDelegate.m in Sources */,
 				4FCC9F471A78C89200AEED5F /* PhotosController.m in Sources */,
 				4FCC9F831A7A504200AEED5F /* PhotoSectionHeaderView.m in Sources */,
