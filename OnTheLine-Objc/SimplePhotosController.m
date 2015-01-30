@@ -44,12 +44,13 @@
     NSData *data = UIImageJPEGRepresentation(UIGraphicsGetImageFromCurrentImageContext(), 0.75);
     UIGraphicsEndImageContext();
     
-    // write the image out to a cache file
-    NSString *filePath = [self documentsPathWithUniqueFileName];
+    NSString *uniqueName = [[NSUUID UUID].UUIDString stringByAppendingPathExtension:@"jpeg"];
+    NSString *filePath = [self documentsPathWithFileName:uniqueName];
+    
     [data writeToFile:filePath atomically:YES]; //Write the file
     
     NSMutableArray *photos = [[NSMutableArray alloc] initWithArray:self.photoURLs];
-    [photos addObject:filePath];
+    [photos addObject:uniqueName];
     
     self.photoURLs = photos;
     
@@ -66,14 +67,12 @@
     return photoURLs;
 }
 
-- (NSString *)documentsPathWithUniqueFileName {
+- (NSString *)documentsPathWithFileName:(NSString *)filename {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
     NSString *documentsPath = [paths objectAtIndex:0];
     
-    NSString *uniqueName = [[NSUUID UUID].UUIDString stringByAppendingPathExtension:@"jpeg"];
-
-    return [documentsPath stringByAppendingPathComponent:uniqueName];
+    return [documentsPath stringByAppendingPathComponent:filename];
 }
 
 @end

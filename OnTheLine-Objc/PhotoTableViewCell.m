@@ -49,9 +49,12 @@
     }];
 }
 
-- (void)updateWIthPhotoURL:(NSString *)photoURL {
+- (void)updateWithPhotoFileName:(NSString *)photoFileName {
     
-    NSData *photoData = [NSData dataWithContentsOfFile:photoURL];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    
+    NSData *photoData = [NSData dataWithContentsOfFile:[documentsPath stringByAppendingPathComponent:photoFileName]];
     UIImage *image = [UIImage imageWithData:photoData];
     
     self.photoImageView.image = image;
