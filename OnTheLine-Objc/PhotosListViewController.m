@@ -125,7 +125,7 @@
 //
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    PhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
-//    [cell updateWIthPhotoURL:[SimplePhotosController sharedInstance].photoURLs[indexPath.section]];
+//    [cell updateWithPhotoFileName:[SimplePhotosController sharedInstance].photoURLs[indexPath.section]];
 //    return cell;
 //}
 
