@@ -11,8 +11,6 @@
 #import "PhotoTableViewCell.h"
 #import "PhotoSectionHeaderView.h"
 
-#import "SVProgressHUD.h"
-
 @interface PhotosListViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) bool alreadyLaunched;
@@ -99,7 +97,7 @@
 - (IBAction)refresh:(id)sender {
 
     if (!self.alreadyLaunched) {
-        [SVProgressHUD show];
+
         self.alreadyLaunched = YES;
     }
 
@@ -108,7 +106,6 @@
         [self.tableView reloadData];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
         [sender endRefreshing];
-        [SVProgressHUD dismiss];
     }];
 }
 
@@ -128,13 +125,15 @@
                                                           style:UIAlertActionStyleDefault
                                                         handler:^(UIAlertAction *action) {
                                                             dispatch_async(dispatch_get_main_queue(), ^{
-                                                                [SVProgressHUD showWithStatus:@"Uploading"];
+
                                                             });
                                                             
                                                             UITextField *message = alertController.textFields.firstObject;
                                                             
                                                             [[PhotosController sharedInstance] savePhoto:image message:message.text completion:^{
-                                                                [SVProgressHUD showSuccessWithStatus:@"Posted"];
+                                                                dispatch_async(dispatch_get_main_queue(), ^{
+                                                                    
+                                                                });
                                                                 [self refresh:nil];
                                                             }];
                                                         }];
