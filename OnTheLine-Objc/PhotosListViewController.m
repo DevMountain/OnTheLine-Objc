@@ -7,7 +7,6 @@
 //
 
 #import "PhotosListViewController.h"
-#import "SimplePhotosController.h"
 #import "PhotoTableViewCell.h"
 
 #import "SVProgressHUD.h"
@@ -15,6 +14,7 @@
 @interface PhotosListViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) bool alreadyLaunched;
+@property (nonatomic, assign) NSInteger photoCount;
 
 @end
 
@@ -35,20 +35,32 @@
     self.title = @"";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)takePhoto:(id)sender {
+
+    self.photoCount++;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
+    cell.textLabel.text = [NSString stringWithFormat:@"Photo %ld", (long)indexPath.row];
+    return cell;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     switch (section) {
         default:
-            return 1;
+            return self.photoCount;
             break;
     }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
 }
 
 #pragma mark - Table view delegate
@@ -66,31 +78,8 @@
     // Pass the selected object to the new view controller.
 }
 
-#pragma mark - Take Photo
-
-- (IBAction)takePhoto:(id)sender {
-
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    
-    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    
-    imagePicker.sourceType = sourceType;
-    imagePicker.delegate = self;
-    [self presentViewController:imagePicker animated:YES completion:nil];
-    
-}
-
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 + (CGFloat)photoCellHeight {
-    return 210;
+    return 44;
 }
 
 #pragma mark - Simple PhotoController
@@ -99,32 +88,6 @@
     [self.tableView reloadData];
     [sender endRefreshing];
     
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    // retrieve the image and resize it down
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
-    
-    [[SimplePhotosController sharedInstance] savePhoto:image completion:^{
-        [SVProgressHUD showSuccessWithStatus:@"Posted"];
-        [self refresh:nil];
-    }];
-    
-    [self dismissViewControllerAnimated:YES completion:nil]
-    ;
-    
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return [SimplePhotosController sharedInstance].photoURLs.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
-    [cell updateWithPhotoFileName:[SimplePhotosController sharedInstance].photoURLs[indexPath.section]];
-    return cell;
 }
 
 @end

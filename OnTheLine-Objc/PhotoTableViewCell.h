@@ -12,6 +12,4 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *photoImageView;
 
-- (void)updateWithPhotoFileName:(NSString *)photoFileName;
-
 @end
