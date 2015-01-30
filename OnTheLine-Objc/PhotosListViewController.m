@@ -10,8 +10,6 @@
 #import "SimplePhotosController.h"
 #import "PhotoTableViewCell.h"
 
-#import "SVProgressHUD.h"
-
 @interface PhotosListViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) bool alreadyLaunched;
@@ -107,7 +105,7 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
     [[SimplePhotosController sharedInstance] savePhoto:image completion:^{
-        [SVProgressHUD showSuccessWithStatus:@"Posted"];
+
         [self refresh:nil];
     }];
     
